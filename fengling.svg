@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 750 1334" style="enable-background:new 0 0 750 1334;" xml:space="preserve">
+	 viewBox="0 0 750 1150" style="enable-background:new 0 0 750 1150;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#55AEFF;}
 	.st1{fill:none;}
@@ -10,18 +10,18 @@
 	.st4{font-size:21px;}
 	.st5{fill:none;stroke:#5B5B5B;stroke-width:4;stroke-miterlimit:10;}
 	.st6{fill:url(#SVGID_1_);}
-	.st7{fill:url(#SVGID_00000076581412293149079130000002482566158894766502_);}
-	.st8{fill:url(#SVGID_00000054985456085793139430000006025577468197489321_);}
-	.st9{fill:url(#SVGID_00000065067495037506885660000006900607222001268115_);}
-	.st10{fill:url(#SVGID_00000177466528780336341070000000233824343532013469_);}
-	.st11{fill:url(#SVGID_00000003068254883787174670000010581504971471570060_);}
-	.st12{fill:url(#SVGID_00000172432114773889319760000003846704913152733093_);}
-	.st13{fill:url(#SVGID_00000007415290333181598290000011597014911998116518_);}
-	.st14{fill:url(#SVGID_00000095307524636276974640000012954237575112034437_);}
-	.st15{fill:url(#SVGID_00000155111842273206153630000014478310874728146597_);}
+	.st7{fill:url(#SVGID_00000036234723675374771890000017575863446377372807_);}
+	.st8{fill:url(#SVGID_00000035503904913415923810000005261190143068994701_);}
+	.st9{fill:url(#SVGID_00000036950810489584967600000013034499660486949010_);}
+	.st10{fill:url(#SVGID_00000007415066742427937080000004386726025713101203_);}
+	.st11{fill:url(#SVGID_00000086684787915312090720000013876512543727111304_);}
+	.st12{fill:url(#SVGID_00000176008738815974856690000003292623993147590324_);}
+	.st13{fill:url(#SVGID_00000056410543745545189330000000865135788255823795_);}
+	.st14{fill:url(#SVGID_00000001648705761060789250000007564714472140451489_);}
+	.st15{fill:url(#SVGID_00000102516220819314244540000003250467461521836726_);}
 </style>
 <g id="图层_6">
-	<rect x="-19" y="-20" class="st0" width="781" height="1376"/>
+	<rect x="-19" y="-20" class="st0" width="781" height="1174"/>
 	<g>
 		<rect x="57.22" y="1104.22" class="st1" width="149.06" height="27.65"/>
 		<text transform="matrix(1 0 0 1 57.2224 1122.283)" class="st2 st3 st4">Wind chime</text>
@@ -32,106 +32,106 @@
 	</g>
 </g>
 <g id="图层_5">
-	<line class="st5" x1="522.79" y1="-62.14" x2="389.64" y2="1075.1"/>
+	<line class="st5" x1="509" y1="-230" x2="365.64" y2="995.1"/>
 	<g>
 		
-			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="433.2941" y1="720.9966" x2="471.7941" y2="720.9966" gradientTransform="matrix(0.994 0.1093 -0.1093 0.994 84.0329 -50.9513)">
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="399.3746" y1="641.2253" x2="437.8746" y2="641.2253" gradientTransform="matrix(0.994 0.1093 -0.1093 0.994 84.0329 -50.9513)">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="1" style="stop-color:#6B6B6B"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
-		<polygon class="st6" points="411.67,1286.35 373.4,1282.15 498.51,144 536.78,148.21 		"/>
+		<polygon class="st6" points="386.67,1203.35 348.4,1199.15 473.51,61 511.78,65.21 		"/>
 		
-			<linearGradient id="SVGID_00000045601109740614330740000008306867816728973983_" gradientUnits="userSpaceOnUse" x1="5207.6328" y1="3888.5156" x2="5246.1328" y2="3888.5156" gradientTransform="matrix(-0.994 -0.1093 0.1093 -0.994 5187.5151 5147.3301)">
+			<linearGradient id="SVGID_00000120556439008336064050000006800477561321228956_" gradientUnits="userSpaceOnUse" x1="5241.5522" y1="3968.2869" x2="5280.0522" y2="3968.2869" gradientTransform="matrix(-0.994 -0.1093 0.1093 -0.994 5187.5151 5147.3301)">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="1" style="stop-color:#6B6B6B"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
-		<polygon style="fill:url(#SVGID_00000045601109740614330740000008306867816728973983_);" points="460.24,139.79 498.51,144 
-			373.4,1282.15 335.13,1277.94 		"/>
+		<polygon style="fill:url(#SVGID_00000120556439008336064050000006800477561321228956_);" points="435.24,56.79 473.51,61 
+			348.4,1199.15 310.13,1194.94 		"/>
 	</g>
 </g>
 <g id="图层_4">
-	<line class="st5" x1="306.77" y1="-29.44" x2="288.06" y2="1115.4"/>
+	<line class="st5" x1="288" y1="-272" x2="263.06" y2="1032.4"/>
 	<g>
 		
-			<linearGradient id="SVGID_00000179645565289492483670000000225485397563107470_" gradientUnits="userSpaceOnUse" x1="304" y1="745" x2="342" y2="745">
+			<linearGradient id="SVGID_00000085222526703738747090000015760972661586300039_" gradientUnits="userSpaceOnUse" x1="279" y1="662" x2="317" y2="662">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="1" style="stop-color:#6B6B6B"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
-		<rect x="304" y="173" style="fill:url(#SVGID_00000179645565289492483670000000225485397563107470_);" width="38" height="1144"/>
+		<rect x="279" y="90" style="fill:url(#SVGID_00000085222526703738747090000015760972661586300039_);" width="38" height="1144"/>
 		
-			<linearGradient id="SVGID_00000134213121384767195820000002346701787738031285_" gradientUnits="userSpaceOnUse" x1="5336.9268" y1="3864.5122" x2="5374.9268" y2="3864.5122" gradientTransform="matrix(-1 0 0 -1 5640.9268 4609.5122)">
+			<linearGradient id="SVGID_00000117647010081460082720000003056169076001012871_" gradientUnits="userSpaceOnUse" x1="5361.9268" y1="3947.5122" x2="5399.9268" y2="3947.5122" gradientTransform="matrix(-1 0 0 -1 5640.9268 4609.5122)">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="1" style="stop-color:#6B6B6B"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
-		<polygon style="fill:url(#SVGID_00000134213121384767195820000002346701787738031285_);" points="266,173 304,173 304,1317 
-			266,1317 		"/>
+		<polygon style="fill:url(#SVGID_00000117647010081460082720000003056169076001012871_);" points="241,90 279,90 279,1234 
+			241,1234 		"/>
 	</g>
 </g>
 <g id="图层_3">
-	<line class="st5" x1="264.48" y1="-235.69" x2="74" y2="809"/>
+	<line class="st5" x1="239.48" y1="-318.69" x2="49" y2="726"/>
 	<g>
 		
-			<linearGradient id="SVGID_00000085930949931767813590000011794577879784731274_" gradientUnits="userSpaceOnUse" x1="98.9175" y1="629.3671" x2="137.4175" y2="629.3671" gradientTransform="matrix(0.9824 0.187 -0.187 0.9824 130.1302 -21.6406)">
+			<linearGradient id="SVGID_00000147923573245536146780000016739783793375834804_" gradientUnits="userSpaceOnUse" x1="58.8373" y1="552.5063" x2="97.3373" y2="552.5063" gradientTransform="matrix(0.9824 0.187 -0.187 0.9824 130.1302 -21.6406)">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="1" style="stop-color:#6B6B6B"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
-		<polygon style="fill:url(#SVGID_00000085930949931767813590000011794577879784731274_);" points="58.14,1091.4 20.32,1084.2 
-			198.9,146.05 236.72,153.24 		"/>
+		<polygon style="fill:url(#SVGID_00000147923573245536146780000016739783793375834804_);" points="33.14,1008.4 -4.68,1001.2 
+			173.9,63.05 211.72,70.24 		"/>
 		
-			<linearGradient id="SVGID_00000014595752808383673600000000555524562309594756_" gradientUnits="userSpaceOnUse" x1="5542.0093" y1="3980.145" x2="5580.5093" y2="3980.145" gradientTransform="matrix(-0.9824 -0.187 0.187 -0.9824 4809.5596 5561.4229)">
+			<linearGradient id="SVGID_00000031180160618037953600000007179406485084301498_" gradientUnits="userSpaceOnUse" x1="5582.0894" y1="4057.0059" x2="5620.5894" y2="4057.0059" gradientTransform="matrix(-0.9824 -0.187 0.187 -0.9824 4809.5596 5561.4229)">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="1" style="stop-color:#6B6B6B"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
-		<polygon style="fill:url(#SVGID_00000014595752808383673600000000555524562309594756_);" points="161.08,138.85 198.9,146.05 
-			20.32,1084.2 -17.5,1077 		"/>
+		<polygon style="fill:url(#SVGID_00000031180160618037953600000007179406485084301498_);" points="136.08,55.85 173.9,63.05 
+			-4.68,1001.2 -42.5,994 		"/>
 	</g>
 </g>
 <g id="图层_2">
-	<line class="st5" x1="468.19" y1="-84.91" x2="252.04" y2="1039.5"/>
+	<line class="st5" x1="462" y1="-263" x2="227.04" y2="956.5"/>
 	<g>
 		
-			<linearGradient id="SVGID_00000083810868764712268090000003065733113351202198_" gradientUnits="userSpaceOnUse" x1="341.8535" y1="588.1284" x2="380.3535" y2="588.1284" gradientTransform="matrix(0.984 0.1782 -0.1782 0.984 112.4708 -51.3492)">
+			<linearGradient id="SVGID_00000063603851929218534520000000709125349532669574_" gradientUnits="userSpaceOnUse" x1="302.4602" y1="510.9133" x2="340.9602" y2="510.9133" gradientTransform="matrix(0.984 0.1782 -0.1782 0.984 112.4708 -51.3492)">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="1" style="stop-color:#6B6B6B"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
-		<polygon style="fill:url(#SVGID_00000083810868764712268090000003065733113351202198_);" points="296.8,1065.01 258.92,1058.15 
-			429.13,118.44 467.02,125.3 		"/>
+		<polygon style="fill:url(#SVGID_00000063603851929218534520000000709125349532669574_);" points="271.8,982.01 233.92,975.15 
+			404.13,35.44 442.02,42.3 		"/>
 		
-			<linearGradient id="SVGID_00000152945176639474479820000015456628121224985479_" gradientUnits="userSpaceOnUse" x1="5299.0732" y1="4021.3838" x2="5337.5732" y2="4021.3838" gradientTransform="matrix(-0.984 -0.1782 0.1782 -0.984 4841.4888 5489.7739)">
+			<linearGradient id="SVGID_00000163757546334253085490000015955113726018453944_" gradientUnits="userSpaceOnUse" x1="5338.4668" y1="4098.5991" x2="5376.9668" y2="4098.5991" gradientTransform="matrix(-0.984 -0.1782 0.1782 -0.984 4841.4888 5489.7739)">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="1" style="stop-color:#6B6B6B"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
-		<polygon style="fill:url(#SVGID_00000152945176639474479820000015456628121224985479_);" points="391.25,111.58 429.13,118.44 
-			258.92,1058.15 221.03,1051.28 		"/>
+		<polygon style="fill:url(#SVGID_00000163757546334253085490000015955113726018453944_);" points="366.25,28.58 404.13,35.44 
+			233.92,975.15 196.03,968.28 		"/>
 	</g>
 </g>
 <g id="图层_1">
-	<line class="st5" x1="623.24" y1="-56.31" x2="620" y2="920.5"/>
+	<line class="st5" x1="599" y1="-225" x2="595" y2="837.5"/>
 	<g>
 		
-			<linearGradient id="SVGID_00000024001789171859858220000011073797423532514949_" gradientUnits="userSpaceOnUse" x1="623.9512" y1="533.9512" x2="662.4512" y2="533.9512">
+			<linearGradient id="SVGID_00000034064228690004414200000001829044769020700337_" gradientUnits="userSpaceOnUse" x1="598.9512" y1="450.9512" x2="637.4512" y2="450.9512">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="1" style="stop-color:#6B6B6B"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
 		
-			<rect x="623.95" y="137.45" style="fill:url(#SVGID_00000024001789171859858220000011073797423532514949_);" width="38.5" height="793"/>
+			<rect x="598.95" y="54.45" style="fill:url(#SVGID_00000034064228690004414200000001829044769020700337_);" width="38.5" height="793"/>
 		
-			<linearGradient id="SVGID_00000013879879240308546390000016779622692266737812_" gradientUnits="userSpaceOnUse" x1="5016.9756" y1="4075.561" x2="5055.4756" y2="4075.561" gradientTransform="matrix(-1 0 0 -1 5640.9268 4609.5122)">
+			<linearGradient id="SVGID_00000098917954490736251380000017227671740728191110_" gradientUnits="userSpaceOnUse" x1="5041.9756" y1="4158.561" x2="5080.4756" y2="4158.561" gradientTransform="matrix(-1 0 0 -1 5640.9268 4609.5122)">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="1" style="stop-color:#6B6B6B"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
-		<polygon style="fill:url(#SVGID_00000013879879240308546390000016779622692266737812_);" points="585.45,137.45 623.95,137.45 
-			623.95,930.45 585.45,930.45 		"/>
+		<polygon style="fill:url(#SVGID_00000098917954490736251380000017227671740728191110_);" points="560.45,54.45 598.95,54.45 
+			598.95,847.45 560.45,847.45 		"/>
 	</g>
 </g>
 </svg>
