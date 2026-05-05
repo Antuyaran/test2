@@ -3,78 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>矢量风铃-交互增强版</title>
+    <title>金属质感风铃-最终版</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-    
     <style>
         body, html { 
             margin: 0; padding: 0; width: 100%; height: 100%; 
-            background: #55AEFF; /* 对应你背景层的颜色 */
+            background: #55AEFF; /* 匹配你图层6的背景色 */
             overflow: hidden; touch-action: none;
             display: flex; justify-content: center; align-items: flex-start;
         }
-        
         svg { width: 100vw; height: 100vh; display: block; }
-
-        /* 只有风铃片会旋转，背景（图层6）不会有这个类名 */
+        
+        /* 交互部分的旋转中心设置在顶部 */
         .chime-piece { 
             transform-origin: 50% 0%; 
             cursor: pointer;
         }
-
         #fengling-video { display: none; }
     </style>
 </head>
 <body>
 
-<!-- 视频文件，添加了 playsinline 属性 -->
 <video id="fengling-video" playsinline webkit-playsinline>
     <source src="fengling.mp4" type="video/mp4">
 </video>
 
+<!-- 
+    preserveAspectRatio="xMidYMin slice" 确保内容从顶部开始显示且不留白边
+-->
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1334" preserveAspectRatio="xMidYMin slice">
-    <style type="text/css">
-        .st0{fill:#55AEFF;} .st1{fill:none;} .st2{fill:#FFFFFF;}
-        .st3{font-family:'PingFangSC-Semibold';} .st4{font-size:20px;}
-        .st5{fill:none;stroke:#6B6B6B;stroke-width:5;stroke-miterlimit:10;}
-        .st6{fill:#ADADAD;} .st7{fill:#D8D8D8;} .st8{fill:#9B9B9B;}
-    </style>
+<style type="text/css">
+	.st0{fill:#55AEFF;} .st1{fill:none;} .st2{fill:#FFFFFF;}
+	.st3{font-family:'PingFangSC-Semibold';} .st4{font-size:21px;}
+	.st5{fill:none;stroke:#5B5B5B;stroke-width:4;stroke-miterlimit:10;}
+	.st6{fill:url(#SVGID_1_);}
+    /* 注意：由于SVG ID在代码中通过 style 定义，我保留了你的完整 style 块 */
+</style>
 
-    <!-- 图层 6：背景层，不加 chime-piece 类名，保持静止 -->
-    <g id="图层_6">
-        <rect x="-19" y="-20" class="st0" width="781" height="1376"/>
-        <g>
-            <rect x="70.44" y="1274.89" class="st1" width="149.06" height="27.65"/>
-            <text transform="matrix(1 0 0 1 70.4448 1292.0897)" class="st2 st3 st4">Wind chime</text>
-            <rect x="342" y="1274.89" class="st1" width="151.76" height="27.65"/>
-            <text transform="matrix(1 0 0 1 342 1292.0892)" class="st2 st3 st4">Project Name</text>
-            <rect x="658.69" y="1274.89" class="st1" width="20.87" height="27.65"/>
-            <text transform="matrix(1 0 0 1 658.6851 1292.0892)" class="st2 st3 st4">01</text>
-        </g>
-    </g>
+<!-- 图层 6：背景保持静止 -->
+<g id="图层_6">
+	<rect x="-19" y="-20" class="st0" width="781" height="1376"/>
+	<g>
+		<rect x="57.22" y="1104.22" class="st1" width="149.06" height="27.65"/>
+		<text transform="matrix(1 0 0 1 57.2224 1122.283)" class="st2 st3 st4">Wind chime</text>
+		<rect x="442.78" y="1104.22" class="st1" width="151.76" height="27.65"/>
+		<text transform="matrix(1 0 0 1 442.7775 1122.2825)" class="st2 st3 st4">Project Name</text>
+		<rect x="643.46" y="1104.22" class="st1" width="35.31" height="27.65"/>
+		<text transform="matrix(1 0 0 1 643.4626 1122.282)" class="st2 st3 st4">01</text>
+	</g>
+</g>
 
-    <!-- 图层 1-5：风铃层，添加 chime-piece 类名 -->
-    <g id="图层_5" class="chime-piece">
-        <line class="st5" x1="531.5" y1="-378" x2="533" y2="1135"/>
-        <rect x="455" y="134" class="st6" width="156" height="1114"/>
-    </g>
-    <g id="图层_4" class="chime-piece">
-        <line class="st5" x1="266.5" y1="-339" x2="275" y2="1121"/>
-        <rect x="197" y="120" class="st7" width="156" height="1114"/>
-    </g>
-    <g id="图层_3" class="chime-piece">
-        <line class="st5" x1="252.48" y1="-230.19" x2="25.26" y2="1115.76"/>
-        <polygon class="st8" points="96.68,1234.96 -57.15,1205.03 101.66,120.96 255.49,150.89"/>
-    </g>
-    <g id="图层_2" class="chime-piece">
-        <line class="st5" x1="535.5" y1="-269.5" x2="266.04" y2="986"/>
-        <rect x="257.66" y="71.65" transform="matrix(0.982 0.1888 -0.1888 0.982 123.7997 -52.1455)" class="st2" width="156" height="1104.41"/>
-    </g>
-    <g id="图层_1" class="chime-piece">
-        <line class="st5" x1="764.5" y1="-176.5" x2="558.78" y2="970.02"/>
-        <polygon class="st7" points="598.73,1291.1 445.01,1260.53 607.21,177.1 760.94,207.66"/>
-    </g>
+<!-- 图层 5 到 1：加入 chime-piece 类名进行交互 -->
+<g id="图层_5" class="chime-piece">
+	<line class="st5" x1="522.79" y1="-62.14" x2="389.64" y2="1075.1"/>
+	<g>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="433.2941" y1="720.9966" x2="471.7941" y2="720.9966" gradientTransform="matrix(0.994 0.1093 -0.1093 0.994 84.0329 -50.9513)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#6B6B6B"/>
+			<stop  offset="1" style="stop-color:#000000"/>
+		</linearGradient>
+		<polygon class="st6" points="411.67,1286.35 373.4,1282.15 498.51,144 536.78,148.21 "/>
+		<linearGradient id="GRAD_5_B" gradientUnits="userSpaceOnUse" x1="5207.6328" y1="3888.5156" x2="5246.1328" y2="3888.5156" gradientTransform="matrix(-0.994 -0.1093 0.1093 -0.994 5187.5151 5147.3301)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#6B6B6B"/>
+			<stop  offset="1" style="stop-color:#000000"/>
+		</linearGradient>
+		<polygon style="fill:url(#GRAD_5_B);" points="460.24,139.79 498.51,144 373.4,1282.15 335.13,1277.94 "/>
+	</g>
+</g>
+
+<g id="图层_4" class="chime-piece">
+	<line class="st5" x1="306.77" y1="-29.44" x2="288.06" y2="1115.4"/>
+	<g>
+		<linearGradient id="GRAD_4_A" gradientUnits="userSpaceOnUse" x1="304" y1="745" x2="342" y2="745">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#6B6B6B"/>
+			<stop  offset="1" style="stop-color:#000000"/>
+		</linearGradient>
+		<rect x="304" y="173" style="fill:url(#GRAD_4_A);" width="38" height="1144"/>
+		<linearGradient id="GRAD_4_B" gradientUnits="userSpaceOnUse" x1="5336.9268" y1="3864.5122" x2="5374.9268" y2="3864.5122" gradientTransform="matrix(-1 0 0 -1 5640.9268 4609.5122)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#6B6B6B"/>
+			<stop  offset="1" style="stop-color:#000000"/>
+		</linearGradient>
+		<polygon style="fill:url(#GRAD_4_B);" points="266,173 304,173 304,1317 266,1317 "/>
+	</g>
+</g>
+
+<g id="图层_3" class="chime-piece">
+	<line class="st5" x1="264.48" y1="-235.69" x2="74" y2="809"/>
+	<g>
+		<linearGradient id="GRAD_3_A" gradientUnits="userSpaceOnUse" x1="98.9175" y1="629.3671" x2="137.4175" y2="629.3671" gradientTransform="matrix(0.9824 0.187 -0.187 0.9824 130.1302 -21.6406)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#6B6B6B"/>
+			<stop  offset="1" style="stop-color:#000000"/>
+		</linearGradient>
+		<polygon style="fill:url(#GRAD_3_A);" points="58.14,1091.4 20.32,1084.2 198.9,146.05 236.72,153.24 "/>
+		<linearGradient id="GRAD_3_B" gradientUnits="userSpaceOnUse" x1="5542.0093" y1="3980.145" x2="5580.5093" y2="3980.145" gradientTransform="matrix(-0.9824 -0.187 0.187 -0.9824 4809.5596 5561.4229)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#6B6B6B"/>
+			<stop  offset="1" style="stop-color:#000000"/>
+		</linearGradient>
+		<polygon style="fill:url(#GRAD_3_B);" points="161.08,138.85 198.9,146.05 20.32,1084.2 -17.5,1077 	"/>
+	</g>
+</g>
+
+<g id="图层_2" class="chime-piece">
+	<line class="st5" x1="468.19" y1="-84.91" x2="252.04" y2="1039.5"/>
+	<g>
+		<linearGradient id="GRAD_2_A" gradientUnits="userSpaceOnUse" x1="341.8535" y1="588.1284" x2="380.3535" y2="588.1284" gradientTransform="matrix(0.984 0.1782 -0.1782 0.984 112.4708 -51.3492)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#6B6B6B"/>
+			<stop  offset="1" style="stop-color:#000000"/>
+		</linearGradient>
+		<polygon style="fill:url(#GRAD_2_A);" points="296.8,1065.01 258.92,1058.15 429.13,118.44 467.02,125.3 "/>
+		<linearGradient id="GRAD_2_B" gradientUnits="userSpaceOnUse" x1="5299.0732" y1="4021.3838" x2="5337.5732" y2="4021.3838" gradientTransform="matrix(-0.984 -0.1782 0.1782 -0.984 4841.4888 5489.7739)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#6B6B6B"/>
+			<stop  offset="1" style="stop-color:#000000"/>
+		</linearGradient>
+		<polygon style="fill:url(#GRAD_2_B);" points="391.25,111.58 429.13,118.44 258.92,1058.15 221.03,1051.28 "/>
+	</g>
+</g>
+
+<g id="图层_1" class="chime-piece">
+	<line class="st5" x1="623.24" y1="-56.31" x2="620" y2="920.5"/>
+	<g>
+		<linearGradient id="GRAD_1_A" gradientUnits="userSpaceOnUse" x1="623.9512" y1="533.9512" x2="662.4512" y2="533.9512">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#6B6B6B"/>
+			<stop  offset="1" style="stop-color:#000000"/>
+		</linearGradient>
+		<rect x="623.95" y="137.45" style="fill:url(#GRAD_1_A);" width="38.5" height="793"/>
+		<linearGradient id="GRAD_1_B" gradientUnits="userSpaceOnUse" x1="5016.9756" y1="4075.561" x2="5055.4756" y2="4075.561" gradientTransform="matrix(-1 0 0 -1 5640.9268 4609.5122)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#6B6B6B"/>
+			<stop  offset="1" style="stop-color:#000000"/>
+		</linearGradient>
+		<polygon style="fill:url(#GRAD_1_B);" points="585.45,137.45 623.95,137.45 623.95,930.45 585.45,930.45 	"/>
+	</g>
+</g>
 </svg>
 
 <script>
@@ -82,31 +151,23 @@
     const mc = new Hammer(document.body);
     let isAudioUnlocked = false;
 
-    // 关键：解锁音频权限的函数
     function unlockAudio() {
         if (!isAudioUnlocked) {
             video.play().then(() => {
-                video.pause(); // 播放瞬间立即暂停，完成权限解锁
+                video.pause();
                 isAudioUnlocked = true;
-                console.log("音频权限已解锁");
-            }).catch(err => console.log("解锁失败:", err));
+            }).catch(e => console.log("等待交互解锁音频"));
         }
     }
 
     mc.on("panleft panright", (ev) => {
-        // 用户一旦开始滑动，立刻尝试解锁音频
         unlockAudio();
-
-        if (Math.abs(ev.velocity) > 0.15) {
-            const power = ev.velocityX * 10; // 进一步降低系数，增加重量感
-
+        if (Math.abs(ev.velocity) > 0.1) {
+            const power = ev.velocityX * 10; 
             gsap.to(".chime-piece", {
                 rotation: power, 
                 duration: 0.8,
-                stagger: {
-                    each: 0.06,
-                    from: power > 0 ? "start" : "end"
-                },
+                stagger: { each: 0.05, from: power > 0 ? "start" : "end" },
                 ease: "power1.out",
                 onStart: () => {
                     if (isAudioUnlocked) {
@@ -119,15 +180,13 @@
                         rotation: 0,
                         duration: 4,
                         stagger: 0.03,
-                        ease: "elastic.out(1, 0.85)" // 增加阻尼系数，让摆动更快停下，显得更重
+                        ease: "elastic.out(1, 0.85)" 
                     });
                 }
             });
         }
     });
-
-    // 额外保险：点击屏幕任何地方也解锁音频
-    document.body.addEventListener('click', unlockAudio, { once: true });
+    document.body.addEventListener('touchstart', unlockAudio, { once: true });
 </script>
 </body>
 </html>
