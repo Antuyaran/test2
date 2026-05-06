@@ -1,179 +1,176 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Wind Chime Project</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <title>Project Wind Chime</title>
     <style>
-        body, html { 
-            margin: 0; padding: 0; width: 100%; height: 100%; 
-            background: #55AEFF; /* 默认底色 */
-            overflow: hidden; touch-action: none;
-            display: flex; justify-content: center; align-items: center;
+        @font-face {
+            font-family: 'DominoMono-BoldC';
+            src: url('DominoMono-BoldC.otf');
         }
 
-        .page-container {
+        body, html {
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .page {
             position: absolute;
             top: 0; left: 0;
-            width: 100vw; height: 100vh;
-            display: flex; justify-content: center; align-items: center;
+            width: 100%; height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            touch-action: none;
         }
 
-        /* 首页容器：背景填充为白色 */
-        #page-intro { z-index: 10; background: #FFFFFF; }
-        /* 风铃容器：背景填充为蓝色 */
-        #page-main { z-index: 5; background: #55AEFF; visibility: hidden; }
+        svg {
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            display: block;
+        }
 
-        /* SVG 核心缩放逻辑：meet 模式保持画板完整且居中 */
-        svg { width: 100%; height: 100%; display: block; }
-        
-        /* 首页样式隔离 [cite: 389-397] */
-        #page-intro .st0{fill:#FFFFFF;}
-        #page-intro .st1{fill:#EFEFEF;stroke:#999999;stroke-width:2;stroke-miterlimit:10;}
-        #page-intro .st2{fill:none;}
-        #page-intro .st3{font-family:'DominoMono-BoldC'; font-weight: bold;}
-        #page-intro .st4{font-size:77.3874px;}
-        #page-intro .st5{font-family:'PingFangSC-Semibold';}
-        #page-intro .st6{font-size:20.5707px;}
+        #homepage { z-index: 10; background: white; }
+        #fengling { z-index: 5; }
 
-        /* 风铃页样式隔离 [cite: 641-658] */
-        #page-main .st0{fill:#55AEFF;}
-        #page-main .st1{fill:none;}
-        #page-main .st2{fill:#FFFFFF;}
-        #page-main .st3{font-family:'PingFangSC-Semibold';}
-        #page-main .st4{font-size:20.5707px;}
-        #page-main .st5{fill:none;stroke:#5B5B5B;stroke-width:4;stroke-miterlimit:10;}
-
-        /* 交互属性 */
-        .chime-piece { transform-origin: 50% 0%; cursor: pointer; }
-        #fengling-video { display: none; }
+        .domino-font { font-family: 'DominoMono-BoldC', sans-serif !important; }
     </style>
 </head>
 <body>
 
-<video id="fengling-video" playsinline webkit-playsinline>
-    <source src="fengling.mp4" type="video/mp4">
-</video>
+    <div class="container">
+        <div id="homepage" class="page">
+            <svg viewBox="0 0 750 1150" preserveAspectRatio="xMidYMid meet">
+                <rect y="0.46" fill="#FFFFFF" width="750" height="1150"/>
+                <g id="cards">
+                    <rect x="161.6" y="98.56" fill="#EFEFEF" stroke="#999999" stroke-width="2" width="475.6" height="871.22"/>
+                    <rect x="137.2" y="112.12" fill="#EFEFEF" stroke="#999999" stroke-width="2" width="475.6" height="871.22"/>
+                    <rect x="112.8" y="126.42" fill="#EFEFEF" stroke="#999999" stroke-width="2" width="475.6" height="871.22"/>
+                </g>
+                <text transform="matrix(1 0 0 1 166.8373 779.088)" class="domino-font" style="font-size:77.38px;">
+                    <tspan x="0" y="0">Turn left </tspan>
+                    <tspan x="0" y="77.39">to the </tspan>
+                    <tspan x="0" y="154.77">next page</tspan>
+                </text>
+                <text transform="matrix(0.9803 0 0 1 90.1237 306.4592)" font-family="sans-serif" font-size="20.57">Home page</text>
+                <text transform="matrix(0.9803 0 0 1 460.3751 306.4592)" font-family="sans-serif" font-size="20.57">Project Name</text>
+                <text transform="matrix(0.9803 0 0 1 653.0948 306.4592)" font-family="sans-serif" font-size="20.57">00</text>
+            </svg>
+        </div>
 
-<div id="page-intro" class="page-container">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1150" preserveAspectRatio="xMidYMid meet">
-        <g id="intro_background">
-            <rect y="0.46" class="st0" width="750" height="1150"/>
-        </g>
-        <g id="intro_cards">
-            <rect x="161.6" y="98.56" class="st1" width="475.6" height="871.22"/>
-            <rect x="137.2" y="112.12" class="st1" width="475.6" height="871.22"/>
-            <rect x="112.8" y="126.42" class="st1" width="475.6" height="871.22"/>
-            <rect x="166.84" y="712.53" class="st2" width="407.86" height="338.9"/>
-            <text transform="matrix(1 0 0 1 166.8373 779.088)">
-                <tspan x="0" y="0" class="st3 st4">Turn left </tspan>
-                <tspan x="0" y="77.39" class="st3 st4">to the </tspan>
-                <tspan x="0" y="154.77" class="st3 st4">next page</tspan>
-            </text>
-        </g>
-        <g id="intro_header_text">
-            <text transform="matrix(0.9803 0 0 1 90.1237 306.4592)" class="st5 st6">Home page</text>
-            <text transform="matrix(0.9803 0 0 1 460.3751 306.4592)" class="st5 st6">Project Name</text>
-            <text transform="matrix(0.9803 0 0 1 653.0948 306.4592)" class="st5 st6">00</text>
-        </g>
-        <g id="intro_arrows">
-            <rect x="616.92" y="560.43" transform="matrix(-1 0 0 -1 1313.55 1143.3)" width="79.71" height="22.44"/>
-            <rect x="538.76" y="538.96" transform="matrix(-1 0 0 -1 1157.23 1100.36)" width="79.71" height="22.44"/>
-            <rect x="479.8" y="559.71" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 483.4 1342.1)" width="79.71" height="22.44"/>
-            <rect x="479.8" y="519.47" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 1262.36 538.48)" width="79.71" height="22.44"/>
-        </g>
-    </svg>
-</div>
+        <div id="fengling" class="page">
+            <svg viewBox="0 0 750 1150" preserveAspectRatio="xMidYMid meet">
+                <rect fill="#55AEFF" width="750" height="1150"/>
+                
+                <g id="layer_5" class="chime-tube">
+                    <polygon fill="url(#grad1)" points="386.7,1203.3 348.4,1199.2 473.5,61 511.8,65.2"/>
+                    <linearGradient id="grad1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#000000"/></linearGradient>
+                </g>
+                
+                <g id="layer_4" class="chime-tube">
+                    <rect x="279" y="90" fill="url(#grad2)" width="38" height="1144"/>
+                    <linearGradient id="grad2"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#000000"/></linearGradient>
+                </g>
 
-<div id="page-main" class="page-container">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1150" preserveAspectRatio="xMidYMid meet">
-        <defs>
-            <linearGradient id="FL_SVGID_1_" gradientUnits="userSpaceOnUse" x1="409.33" y1="511.3256" x2="447.83" y2="511.3256" gradientTransform="matrix(0.994 0.1093 0.1093 -0.994 -51.827 1093.5907)">
-                <stop offset="0" style="stop-color:#FFFFFF"/><stop offset="1" style="stop-color:#6B6B6B"/><stop offset="1" style="stop-color:#000000"/>
-            </linearGradient>
-            <linearGradient id="FL_SVGID_1B_" gradientUnits="userSpaceOnUse" x1="5231.606" y1="-2634.6882" x2="5270.106" y2="-2634.6882" gradientTransform="matrix(-0.994 -0.1093 -0.1093 0.994 5323.375 3820.7881)">
-                <stop offset="0" style="stop-color:#FFFFFF"/><stop offset="1" style="stop-color:#6B6B6B"/><stop offset="1" style="stop-color:#000000"/>
-            </linearGradient>
-            </defs>
+                <g id="layer_3" class="chime-tube">
+                    <polygon fill="url(#grad3)" points="33.1,1008.4 -4.7,1001.2 173.9,63 211.7,70.2"/>
+                    <linearGradient id="grad3"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#000000"/></linearGradient>
+                </g>
 
-        <g id="main_bg_layer">
-            <rect class="st0" width="750" height="1150"/>
-            <text transform="matrix(0.9803 0 0 1 73.1968 1118.9316)" class="st2 st3 st4">Wind chime</text>
-            <text transform="matrix(0.9803 0 0 1 443.4482 1118.9307)" class="st2 st3 st4">Project Name</text>
-            <text transform="matrix(0.9803 0 0 1 636.168 1118.9307)" class="st2 st3 st4">01</text>
-        </g>
+                <g id="layer_2" class="chime-tube">
+                    <polygon fill="url(#grad4)" points="271.8,982 233.9,975.2 404.1,35.4 442,42.3"/>
+                    <linearGradient id="grad4"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#000000"/></linearGradient>
+                </g>
 
-        <g id="Piece_5" class="chime-piece">
-            <line class="st5" x1="519" y1="-304" x2="365.6" y2="995.1"/>
-            <polygon style="fill:url(#FL_SVGID_1_);" points="386.7,1203.3 348.4,1199.2 473.5,61 511.8,65.2"/>
-            <polygon style="fill:url(#FL_SVGID_1B_);" points="435.2,56.8 473.5,61 348.4,1199.2 310.1,1194.9"/>
-        </g>
-        <g id="main_arrows">
-            <rect x="616.9" y="560.4" transform="matrix(-1 0 0 -1 1313.55 1143.3)" class="st2" width="79.7" height="22.4"/>
-            <rect x="538.8" y="539" transform="matrix(-1 0 0 -1 1157.23 1100.36)" class="st2" width="79.7" height="22.4"/>
-            <rect x="479.8" y="559.7" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 483.4 1342.1)" class="st2" width="79.7" height="22.4"/>
-            <rect x="479.8" y="519.5" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 1262.37 538.48)" class="st2" width="79.7" height="22.4"/>
-        </g>
-    </svg>
-</div>
+                <g id="layer_1" class="chime-tube">
+                    <rect x="599" y="54.5" fill="url(#grad5)" width="38.5" height="793"/>
+                    <linearGradient id="grad5"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#000000"/></linearGradient>
+                </g>
 
-<script>
-    const video = document.getElementById('fengling-video');
-    const pageIntro = document.getElementById('page-intro');
-    const pageMain = document.getElementById('page-main');
-    
-    const mcIntro = new Hammer(pageIntro);
-    const mcMain = new Hammer(pageMain);
-    let isAudioUnlocked = false;
-    let currentScene = 0;
+                <text transform="matrix(0.9803 0 0 1 73.1968 1118.9316)" fill="#FFFFFF" font-family="sans-serif" font-size="20.57">Wind chime</text>
+                <text transform="matrix(0.9803 0 0 1 443.4482 1118.9307)" fill="#FFFFFF" font-family="sans-serif" font-size="20.57">Project Name</text>
+                <text transform="matrix(0.9803 0 0 1 636.168 1118.9307)" fill="#FFFFFF" font-family="sans-serif" font-size="20.57">01</text>
+            </svg>
+        </div>
+    </div>
 
-    function unlockAudio() {
-        if (!isAudioUnlocked) {
-            video.play().then(() => { video.pause(); isAudioUnlocked = true; }).catch(e => console.log("Unlock audio failed"));
-        }
-    }
+    <audio id="chimeAudio" src="fengling.mp4"></audio>
 
-    // 场景 0：整页划开
-    mcIntro.on("swipeleft", () => {
-        unlockAudio();
-        gsap.to(pageIntro, {
-            x: -window.innerWidth,
-            rotation: -5,
-            duration: 0.8,
-            ease: "power2.inOut",
-            onComplete: () => {
-                pageIntro.style.display = "none";
-                pageMain.style.visibility = "visible";
-                currentScene = 1;
-                gsap.from(".chime-piece", {
-                    rotation: 5, stagger: 0.05, duration: 2, ease: "elastic.out(1, 0.5)"
-                });
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        const homepage = document.getElementById('homepage');
+        const audio = document.getElementById('chimeAudio');
+        const tubes = document.querySelectorAll('.chime-tube');
+        
+        let startX = 0;
+
+        // 触摸开始
+        document.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        // 触摸结束
+        document.addEventListener('touchend', (e) => {
+            let endX = e.changedTouches[0].clientX;
+            
+            // 识别左滑 (滑动距离大于50px)
+            if (startX - endX > 50) {
+                if (homepage.style.display !== 'none') {
+                    swipePage();
+                } else {
+                    playChimeEffect();
+                }
             }
         });
-    });
 
-    // 场景 1：风铃交互
-    mcMain.on("panleft panright", (ev) => {
-        if (currentScene !== 1) return;
-        unlockAudio();
-        if (Math.abs(ev.velocity) > 0.1) {
-            const power = ev.velocityX * 10;
-            gsap.to(".chime-piece", {
-                rotation: power,
+        // 切换页面动画
+        function swipePage() {
+            gsap.to(homepage, {
+                x: '-100%',
                 duration: 0.8,
-                stagger: { each: 0.05, from: power > 0 ? "start" : "end" },
-                ease: "power1.out",
-                onStart: () => { if (isAudioUnlocked) { video.currentTime = 0; video.play(); } },
+                ease: "power2.inOut",
                 onComplete: () => {
-                    gsap.to(".chime-piece", { rotation: 0, duration: 4, stagger: 0.03, ease: "elastic.out(1, 0.85)" });
+                    homepage.style.display = 'none';
+                    // 进入页面时也可以触发一次轻微动效
+                    playChimeEffect(0.5);
                 }
             });
         }
-    });
 
-    document.body.addEventListener('touchstart', unlockAudio, { once: true });
-</script>
+        // 风铃碰撞特效
+        function playChimeEffect(intensity = 1) {
+            // 播放音效
+            audio.currentTime = 0;
+            audio.play().catch(e => console.log("Audio play blocked"));
+
+            // 每个管子随机摆动（模拟碰撞）
+            tubes.forEach((tube, index) => {
+                const angle = (Math.random() * 5 + 3) * (index % 2 === 0 ? 1 : -1) * intensity;
+                
+                gsap.to(tube, {
+                    rotation: angle,
+                    transformOrigin: "50% 0%", // 从顶部摆动
+                    duration: 0.2,
+                    yoyo: true,
+                    repeat: 5,
+                    ease: "sine.inOut",
+                    onComplete: () => {
+                        gsap.to(tube, { rotation: 0, duration: 1.5, ease: "elastic.out(1, 0.3)" });
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 </html>
