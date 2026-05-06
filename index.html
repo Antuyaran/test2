@@ -9,24 +9,40 @@
     <style>
         body, html { 
             margin: 0; padding: 0; width: 100%; height: 100%; 
-            background: #55AEFF; /* 统一背景色 */
+            background: #55AEFF; 
             overflow: hidden; touch-action: none;
         }
 
         /* 页面容器管理 */
-        .page-container {
+        .page-wrapper {
             position: absolute;
             top: 0; left: 0;
             width: 100vw; height: 100vh;
             display: flex; justify-content: center; align-items: flex-start;
         }
 
-        #page-intro { z-index: 10; } /* 封面在上 */
-        #page-main { z-index: 5; visibility: hidden; } /* 风铃在下，初始隐藏 */
+        #page-intro { z-index: 10; background: #55AEFF; } /* 首页在上 */
+        #page-main { z-index: 5; } /* 风铃在下 */
 
         svg { width: 100vw; height: 100vh; display: block; }
         
-        /* 风铃片旋转中心设置 */
+        /* 隔离首页样式 [cite: 5-11] */
+        #page-intro .st0{fill:none;}
+        #page-intro .st1{font-family:'PingFangSC-Semibold';}
+        #page-intro .st2{font-size:21px;}
+        #page-intro .st3{fill:#EFEFEF;stroke:#999999;stroke-width:2;stroke-miterlimit:10;}
+        #page-intro .st4{font-family:'PingFangSC-Semibold'; font-weight: bold;}
+        #page-intro .st5{font-size:70px;}
+
+        /* 隔离风铃页样式 [cite: 48-64] */
+        #page-main .st0{fill:#55AEFF;}
+        #page-main .st1{fill:none;}
+        #page-main .st2{fill:#FFFFFF;}
+        #page-main .st3{font-family:'PingFangSC-Semibold';}
+        #page-main .st4{font-size:21px;}
+        #page-main .st5{fill:none;stroke:#5B5B5B;stroke-width:4;stroke-miterlimit:10;}
+
+        /* 风铃交互部分的旋转中心 */
         .chime-piece { transform-origin: 50% 0%; cursor: pointer; }
         #fengling-video { display: none; }
     </style>
@@ -37,98 +53,85 @@
     <source src="fengling.mp4" type="video/mp4">
 </video>
 
-<div id="page-intro" class="page-container">
+<div id="page-intro" class="page-wrapper">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1150" preserveAspectRatio="xMidYMin slice">
-        <style type="text/css">
-            .st_intro_bg{fill:#55AEFF;} .st_c0{fill:none;} 
-            .st_c1{font-family:'PingFangSC-Semibold'; fill:#FFFFFF;} .st_c2{font-size:21px;}
-            .st_c3{fill:#EFEFEF;stroke:#999999;stroke-width:2;stroke-miterlimit:10;}
-            .st_c4{font-family:'PingFangSC-Semibold'; font-weight: bold; fill:#000000;} .st_c5{font-size:70px;}
-        </style>
-        <rect width="750" height="1150" class="st_intro_bg"/>
-        
-        <g id="footer_0">
-            <text transform="matrix(1 0 0 1 57.2224 1122.283)" class="st_c1 st_c2">Home Page</text>
-            <text transform="matrix(1 0 0 1 442.7775 1122.2825)" class="st_c1 st_c2">Project Name</text>
-            <text transform="matrix(1 0 0 1 643.4626 1122.282)" class="st_c1 st_c2">00</text>
+        <g id="图层_5">
+            <rect x="57.22" y="1104.22" class="st0" width="149.06" height="27.65"/>
+            <text transform="matrix(1 0 0 1 57.2224 1122.283)" class="st1 st2" fill="white">Home Page</text>
+            <rect x="442.78" y="1104.22" class="st0" width="151.76" height="27.65"/>
+            <text transform="matrix(1 0 0 1 442.7775 1122.2825)" class="st1 st2" fill="white">Project Name</text>
+            <rect x="643.46" y="1104.22" class="st0" width="35.31" height="27.65"/>
+            <text transform="matrix(1 0 0 1 643.4626 1122.282)" class="st1 st2" fill="white">00</text>
         </g>
-
-        <g id="bg_cards">
-            <rect x="153.84" y="106.16" class="st_c3" width="475.6" height="871.22"/>
-            <rect x="129.44" y="119.72" class="st_c3" width="475.6" height="871.22"/>
-            <rect x="129.44" y="119.72" class="st_c3" width="475.6" height="871.22"/>
+        <g id="图层_4">
+            <rect x="153.84" y="106.16" class="st3" width="475.6" height="871.22"/>
+            <rect x="129.44" y="119.72" class="st3" width="475.6" height="871.22"/>
         </g>
-
-        <g id="swipe_group">
-            <rect x="105.04" y="134.02" class="st_c3" width="475.6" height="871.22"/>
+        <g id="图层_3">
+            <rect x="129.44" y="119.72" class="st3" width="475.6" height="871.22"/>
+        </g>
+        <g id="图层_2">
+            <rect x="105.04" y="134.02" class="st3" width="475.6" height="871.22"/>
             <text transform="matrix(1 0 0 1 146.0762 258.6869)">
-                <tspan x="0" y="0" class="st_c4 st_c5">Turn left </tspan>
-                <tspan x="0" y="90" class="st_c4 st_c5">to the </tspan>
-                <tspan x="0" y="180" class="st_c4 st_c5">next page</tspan>
+                <tspan x="0" y="0" class="st4 st5">Turn left </tspan>
+                <tspan x="0" y="90" class="st4 st5">to the </tspan>
+                <tspan x="0" y="180" class="st4 st5">next page</tspan>
             </text>
-            <g id="arrow">
-                <rect x="616.92" y="560.43" width="79.71" height="22.44" transform="rotate(180 656.77 571.65)"/>
-                <rect x="538.76" y="538.96" width="79.71" height="22.44" transform="rotate(180 578.61 550.18)"/>
-                <rect x="479.8" y="559.71" width="79.71" height="22.44" transform="rotate(-135 519.65 570.93)"/>
-                <rect x="479.8" y="519.47" width="79.71" height="22.44" transform="rotate(135 519.65 530.69)"/>
-            </g>
+        </g>
+        <g id="图层_1">
+            <rect x="616.92" y="560.43" width="79.71" height="22.44" transform="rotate(180 656.77 571.65)"/>
+            <rect x="538.76" y="538.96" width="79.71" height="22.44" transform="rotate(180 578.61 550.18)"/>
+            <rect x="479.8" y="559.71" width="79.71" height="22.44" transform="rotate(-135 519.65 570.93)"/>
+            <rect x="479.8" y="519.47" width="79.71" height="22.44" transform="rotate(135 519.65 530.69)"/>
         </g>
     </svg>
 </div>
 
-<div id="page-main" class="page-container">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1334" preserveAspectRatio="xMidYMin slice">
-        <style type="text/css">
-            .st_m0{fill:#55AEFF;} .st_m1{fill:none;} .st_m2{fill:#FFFFFF;}
-            .st_m3{font-family:'PingFangSC-Semibold';} .st_m4{font-size:21px;}
-            .st_m5{fill:none;stroke:#5B5B5B;stroke-width:4;stroke-miterlimit:10;}
-        </style>
+<div id="page-main" class="page-wrapper">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1150" preserveAspectRatio="xMidYMin slice">
+        <g id="fl_bg">
+            <rect x="-19" y="-20" class="st0" width="781" height="1174"/>
+            <text transform="matrix(1 0 0 1 57.2224 1122.283)" class="st2 st3 st4">Wind chime</text>
+            <text transform="matrix(1 0 0 1 442.7775 1122.2825)" class="st2 st3 st4">Project Name</text>
+            <text transform="matrix(1 0 0 1 643.4626 1122.282)" class="st2 st3 st4">01</text>
+        </g>
         
-        <g id="main_bg">
-            <rect x="-19" y="-20" class="st_m0" width="781" height="1376"/>
-            <text transform="matrix(1 0 0 1 57.2224 1122.283)" class="st_m2 st_m3 st_m4">Wind chime</text>
-            <text transform="matrix(1 0 0 1 442.7775 1122.2825)" class="st_m2 st_m3 st_m4">Project Name</text>
-            <text transform="matrix(1 0 0 1 643.4626 1122.282)" class="st_m2 st_m3 st_m4">01</text>
-        </g>
-
         <g id="图层_5" class="chime-piece">
-            <line class="st_m5" x1="522.79" y1="-62.14" x2="389.64" y2="1075.1"/>
-            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="433.2941" y1="720.9966" x2="471.7941" y2="720.9966" gradientTransform="matrix(0.994 0.1093 -0.1093 0.994 84.0329 -50.9513)">
+            <line class="st5" x1="519" y1="-304" x2="365.6" y2="995.1"/>
+            <linearGradient id="FL_SVGID_1" gradientUnits="userSpaceOnUse" x1="409.33" y1="511.32" x2="447.83" y2="511.32" gradientTransform="matrix(0.994 0.1093 0.1093 -0.994 -51.8 1093.6)">
                 <stop offset="0" style="stop-color:#FFFFFF"/><stop offset="1" style="stop-color:#000000"/>
             </linearGradient>
-            <polygon style="fill:url(#SVGID_1_);" points="411.67,1286.35 373.4,1282.15 498.51,144 536.78,148.21"/>
+            <polygon style="fill:url(#FL_SVGID_1);" points="386.7,1203.3 348.4,1199.2 473.5,61 511.8,65.2"/>
         </g>
-
         <g id="图层_4" class="chime-piece">
-            <line class="st_m5" x1="306.77" y1="-29.44" x2="288.06" y2="1115.4"/>
-            <linearGradient id="GRAD_4" gradientUnits="userSpaceOnUse" x1="304" y1="745" x2="342" y2="745">
+            <line class="st5" x1="291" y1="-467" x2="263.1" y2="1032.4"/>
+            <linearGradient id="FL_SVGID_4" gradientUnits="userSpaceOnUse" x1="279" y1="490" x2="317" y2="490" gradientTransform="matrix(1 0 0 -1 0 1152)">
                 <stop offset="0" style="stop-color:#FFFFFF"/><stop offset="1" style="stop-color:#000000"/>
             </linearGradient>
-            <rect x="266" y="173" width="76" height="1144" style="fill:url(#GRAD_4);"/>
+            <rect x="241" y="90" width="38" height="1144" style="fill:url(#FL_SVGID_4);"/>
+            <rect x="279" y="90" width="38" height="1144" style="fill:url(#FL_SVGID_4);"/>
         </g>
-
         <g id="图层_3" class="chime-piece">
-            <line class="st_m5" x1="264.48" y1="-235.69" x2="74" y2="809"/>
-            <linearGradient id="GRAD_3" gradientUnits="userSpaceOnUse" x1="98.91" y1="629.36" x2="137.41" y2="629.36" gradientTransform="matrix(0.982 0.187 -0.187 0.982 130.1 -21.6)">
+            <line class="st5" x1="254" y1="-353" x2="49" y2="726"/>
+            <linearGradient id="FL_SVGID_3" gradientUnits="userSpaceOnUse" x1="75.84" y1="601.12" x2="114.34" y2="601.12" gradientTransform="matrix(0.982 0.187 0.187 -0.982 -102.3 1108.5)">
                 <stop offset="0" style="stop-color:#FFFFFF"/><stop offset="1" style="stop-color:#000000"/>
             </linearGradient>
-            <polygon style="fill:url(#GRAD_3);" points="58.14,1091.4 20.32,1084.2 198.9,146.05 236.72,153.24"/>
+            <polygon style="fill:url(#FL_SVGID_3);" points="33.1,1008.4 -4.7,1001.2 173.9,63 211.7,70.2"/>
         </g>
-
         <g id="图层_2" class="chime-piece">
-            <line class="st_m5" x1="468.19" y1="-84.91" x2="252.04" y2="1039.5"/>
-            <linearGradient id="GRAD_2" gradientUnits="userSpaceOnUse" x1="341.85" y1="588.12" x2="380.35" y2="588.12" gradientTransform="matrix(0.984 0.178 -0.178 0.984 112.4 -51.3)">
+            <line class="st5" x1="489" y1="-370" x2="227" y2="956.5"/>
+            <linearGradient id="FL_SVGID_2" gradientUnits="userSpaceOnUse" x1="318.64" y1="642.53" x2="357.17" y2="642.53" gradientTransform="matrix(0.984 0.178 0.178 -0.984 -109 1080.7)">
                 <stop offset="0" style="stop-color:#FFFFFF"/><stop offset="1" style="stop-color:#000000"/>
             </linearGradient>
-            <polygon style="fill:url(#GRAD_2);" points="296.8,1065.01 258.92,1058.15 429.13,118.44 467.02,125.3"/>
+            <polygon style="fill:url(#FL_SVGID_2);" points="271.8,982 233.9,975.2 404.1,35.4 442,42.3"/>
         </g>
-
         <g id="图层_1" class="chime-piece">
-            <line class="st_m5" x1="623.24" y1="-56.31" x2="620" y2="920.5"/>
-            <linearGradient id="GRAD_1" gradientUnits="userSpaceOnUse" x1="623.9" y1="533.9" x2="662.4" y2="533.9">
+            <line class="st5" x1="600" y1="-274" x2="595" y2="837.5"/>
+            <linearGradient id="FL_SVGID_1_B" gradientUnits="userSpaceOnUse" x1="598.95" y1="701.05" x2="637.45" y2="701.05" gradientTransform="matrix(1 0 0 -1 0 1152)">
                 <stop offset="0" style="stop-color:#FFFFFF"/><stop offset="1" style="stop-color:#000000"/>
             </linearGradient>
-            <rect x="585.45" y="137.45" width="77" height="793" style="fill:url(#GRAD_1);"/>
+            <rect x="560.5" y="54.5" width="38.5" height="793" style="fill:url(#FL_SVGID_1_B);"/>
+            <rect x="599" y="54.5" width="38.5" height="793" style="fill:url(#FL_SVGID_1_B);"/>
         </g>
     </svg>
 </div>
@@ -138,7 +141,6 @@
     const pageIntro = document.getElementById('page-intro');
     const pageMain = document.getElementById('page-main');
     
-    // 初始化手势控制
     const mcIntro = new Hammer(pageIntro);
     const mcMain = new Hammer(pageMain);
     let isAudioUnlocked = false;
@@ -150,32 +152,30 @@
         }
     }
 
-    // ================= 场景 0 逻辑：左滑飞出 =================
+    // ================= 场景 0：整个首页左滑划掉 =================
     mcIntro.on("swipeleft", (ev) => {
         unlockAudio();
-        // 卡片组（包含文字和箭头）向左飞走
-        gsap.to("#swipe_group", {
-            x: -1000, 
-            rotation: -15, 
-            duration: 0.7, 
-            ease: "power2.in",
+        // 整个首页容器作为一个整体向左飞出
+        gsap.to(pageIntro, {
+            x: -window.innerWidth, 
+            rotation: -5, // 增加微小旋转增强卡片感
+            duration: 0.8, 
+            ease: "power2.inOut",
             onComplete: () => {
-                pageIntro.style.display = "none"; // 彻底隐藏封面
-                pageMain.style.visibility = "visible"; // 显示主页
+                pageIntro.style.display = "none";
                 currentScene = 1;
-                
-                // 进场时让风铃有个小晃动
+                // 风铃页入场小震动
                 gsap.from(".chime-piece", {
-                    rotation: 8,
-                    stagger: 0.1,
-                    duration: 2.5,
+                    rotation: 5,
+                    stagger: 0.08,
+                    duration: 2,
                     ease: "elastic.out(1, 0.5)"
                 });
             }
         });
     });
 
-    // ================= 场景 1 逻辑：风铃交互 =================
+    // ================= 场景 1：风铃物理交互 (保持之前逻辑) =================
     mcMain.on("panleft panright", (ev) => {
         if (currentScene !== 1) return;
         unlockAudio();
