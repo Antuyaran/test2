@@ -14,7 +14,6 @@
             display: flex; justify-content: center; align-items: center;
         }
 
-        /* 页面容器：始终居中 */
         .page-container {
             position: absolute;
             top: 0; left: 0;
@@ -22,18 +21,18 @@
             display: flex; justify-content: center; align-items: center;
         }
 
-        #page-intro { z-index: 10; background: #FFFFFF; } /* 首页白底填充 */
-        #page-main { z-index: 5; background: #55AEFF; visibility: hidden; } /* 风铃页蓝底填充 */
+        #page-intro { z-index: 10; background: #FFFFFF; }
+        #page-main { z-index: 5; background: #55AEFF; visibility: hidden; }
 
-        /* 核心：SVG 保持比例居中缩放，背景填充剩余空间 */
         svg { width: 100%; height: 100%; display: block; }
         
-        /* 样式隔离 */
+        /* 首页样式隔离 */
         #page-intro .st_intro_bg{fill:#FFFFFF;}
         #page-intro .st_card{fill:#EFEFEF;stroke:#999999;stroke-width:2;stroke-miterlimit:10;}
         #page-intro .st_guide_text{font-family:'DominoMono-BoldC'; font-weight: bold; font-size:77.3874px;}
         #page-intro .st_footer_text{font-family:'PingFangSC-Semibold'; font-size:20.5707px;}
 
+        /* 风铃页样式隔离 */
         #page-main .st_chime_bg{fill:#55AEFF;}
         #page-main .st_line{fill:none;stroke:#5B5B5B;stroke-width:4;stroke-miterlimit:10;}
         #page-main .st_footer_text{font-family:'PingFangSC-Semibold'; font-size:20.5707px; fill:#FFFFFF;}
@@ -51,27 +50,31 @@
 <div id="page-intro" class="page-container">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1150" preserveAspectRatio="xMidYMid meet">
         <rect width="750" height="1150" class="st_intro_bg"/>
+        
         <g id="header_text_intro">
             <text transform="matrix(0.9803 0 0 1 90.1237 306.4592)" class="st_footer_text">Home page</text>
             <text transform="matrix(0.9803 0 0 1 460.3751 306.4592)" class="st_footer_text">Project Name</text>
             <text transform="matrix(0.9803 0 0 1 653.0948 306.4592)" class="st_footer_text">00</text>
         </g>
+
         <g id="cards_group">
             <rect x="153.84" y="106.16" class="st_card" width="475.6" height="871.22"/>
             <rect x="129.44" y="119.72" class="st_card" width="475.6" height="871.22"/>
             <rect x="105.04" y="134.02" class="st_card" width="475.6" height="871.22"/>
-            <text transform="matrix(1 0 0 1 166.8373 779.088)" class="st_guide_text">
-                <tspan x="0" y="0">Turn left </tspan>
-                <tspan x="0" y="77.39">to the </tspan>
-                <tspan x="0" y="154.77">next page</tspan>
-            </text>
         </g>
+
         <g id="arrows_intro">
             <rect x="616.92" y="560.43" transform="matrix(-1 0 0 -1 1313.55 1143.31)" width="79.71" height="22.44"/>
             <rect x="538.76" y="538.96" transform="matrix(-1 0 0 -1 1157.23 1100.36)" width="79.71" height="22.44"/>
             <rect x="479.8" y="559.71" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 483.41 1342.09)" width="79.71" height="22.44"/>
             <rect x="479.8" y="519.47" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 1262.37 538.48)" width="79.71" height="22.44"/>
         </g>
+
+        <text transform="matrix(1 0 0 1 159.0762 786.6869)" class="st_guide_text">
+            <tspan x="0" y="0">Turn left </tspan>
+            <tspan x="0" y="77.39">to the </tspan>
+            <tspan x="0" y="154.77">next page</tspan>
+        </text>
     </svg>
 </div>
 
@@ -168,7 +171,7 @@
         }
     }
 
-    // 首页向左滑开整页
+    // 场景 0 转场
     mcIntro.on("swipeleft", () => {
         unlockAudio();
         gsap.to(pageIntro, {
@@ -187,7 +190,7 @@
         });
     });
 
-    // 风铃交互
+    // 场景 1 交互
     mcMain.on("panleft panright", (ev) => {
         if (scene !== 1) return;
         unlockAudio();
