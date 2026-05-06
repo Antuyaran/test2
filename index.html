@@ -14,6 +14,7 @@
             display: flex; justify-content: center; align-items: center;
         }
 
+        /* 页面容器：始终居中 */
         .page-container {
             position: absolute;
             top: 0; left: 0;
@@ -21,9 +22,10 @@
             display: flex; justify-content: center; align-items: center;
         }
 
-        #page-intro { z-index: 10; background: #FFFFFF; }
-        #page-main { z-index: 5; background: #55AEFF; visibility: hidden; }
+        #page-intro { z-index: 10; background: #FFFFFF; } /* 首页白底填充 */
+        #page-main { z-index: 5; background: #55AEFF; visibility: hidden; } /* 风铃页蓝底填充 */
 
+        /* 核心：SVG 保持比例居中缩放 */
         svg { width: 100%; height: 100%; display: block; }
         
         /* 首页样式隔离 */
@@ -70,7 +72,7 @@
             <rect x="479.8" y="519.47" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 1262.37 538.48)" width="79.71" height="22.44"/>
         </g>
 
-        <text transform="matrix(1 0 0 1 159.0762 786.6869)" class="st_guide_text">
+        <text transform="matrix(1 0 0 1 166.8373 779.088)" class="st_guide_text">
             <tspan x="0" y="0">Turn left </tspan>
             <tspan x="0" y="77.39">to the </tspan>
             <tspan x="0" y="154.77">next page</tspan>
